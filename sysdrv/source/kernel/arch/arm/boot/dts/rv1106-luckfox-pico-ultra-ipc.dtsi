@@ -68,7 +68,8 @@
 		display-timings {
 			native-mode = <&timing0>;
 
-			timing0: timing0 {
+			// 720x720
+			/*timing0: timing0 {
 				clock-frequency = <30000000>;
 				hactive = <720>;
 				vactive = <720>;
@@ -82,6 +83,23 @@
 				vsync-active = <0>;
 				de-active = <0>;
 				pixelclk-active = <0>;
+			};*/
+
+			// 480x480
+			timing0: timing0 {
+				clock-frequency = <16500000>;
+				hactive = <480>;
+				vactive = <480>;
+				hback-porch = <10>;
+				hfront-porch = <50>;
+				vback-porch = <8>;
+				vfront-porch = <8>;
+				hsync-len = <4>;
+				vsync-len = <10>;
+				hsync-active = <0>;
+				vsync-active = <0>;
+				de-active = <0>;
+				pixelclk-active = <1>;
 			};
 		};
 
@@ -445,6 +463,7 @@
 };
 
 &i2c3 {
+	status = "okay";
     clock-frequency = <100000>;
     GT911:touchscreen {
       compatible = "goodix,gt911";
@@ -479,7 +498,7 @@
 	pinctrl-0 = <&i2c2m0_xfer>;
 };
 &i2c3 {
-	pinctrl-0 = <&i2c3m0_xfer &i2c3m1_xfer &i2c3m2_xfer &tp_rst &tp_irq>;
+	pinctrl-0 = </*&i2c3m0_xfer &i2c3m1_xfer */&i2c3m2_xfer &tp_rst &tp_irq>;
 };
 &i2c4 {
 	pinctrl-0 = <&i2c4m0_xfer &i2c4m1_xfer &i2c4m2_xfer>;
