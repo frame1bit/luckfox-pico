@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>icons/share.png</file>
+        <file>icons/rewind.png</file>
+        <file>icons/play.png</file>
+        <file>icons/pause.png</file>
+        <file>icons/outline_volume_up_white_18dp.png</file>
+        <file>icons/outline_shuffle_white_18dp.png</file>
+        <file>icons/outline_lyrics_white_24dp.png</file>
+        <file>icons/outline_equalizer_white_24dp.png</file>
+        <file>icons/forward.png</file>
+        <file>gfx/spotify_icon.png</file>
+        <file>gfx/slider_value_right.png</file>
+        <file>gfx/slider_value_left.png</file>
+        <file>gfx/slider_knob.png</file>
+        <file>gfx/slider_background.png</file>
+        <file>gfx/cover_overlay.png</file>
+        <file>gfx/cover_frame.png</file>
+        <file>gfx/background.png</file>
+        <file>gfx/art.png</file>
+        <file>gfx/cover.png</file>
+        <file>gfx/bar_backup.png</file>
+        <file>gfx/bar.png</file>
+        <file>gfx/background2.png</file>
+        <file>ui/MusicPlayer.qml</file>
+        <file>ui/SliderBar.qml</file>
+        <file>fonts/OpenSans-SemiboldItalic.ttf</file>
+        <file>fonts/OpenSans-Semibold.ttf</file>
+        <file>fonts/OpenSans-Regular.ttf</file>
+        <file>fonts/OpenSans-ExtraBoldItalic.ttf</file>
+        <file>fonts/OpenSans-ExtraBold.ttf</file>
+        <file>fonts/OpenSans-BoldItalic.ttf</file>
+        <file>fonts/OpenSans-LightItalic.ttf</file>
+        <file>fonts/OpenSans-Light.ttf</file>
+        <file>fonts/OpenSans-Italic.ttf</file>
+        <file>fonts/OpenSans-Bold.ttf</file>
+    </qresource>
+</RCC>

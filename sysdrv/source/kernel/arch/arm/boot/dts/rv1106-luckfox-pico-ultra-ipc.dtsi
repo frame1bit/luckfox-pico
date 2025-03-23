@@ -50,7 +50,7 @@
 			232 233 234 235 236 237 238 239
 			240 241 242 243 244 245 246 247
 			248 249 250 251 252 253 254 255>;
-		default-brightness-level = <255>;
+		default-brightness-level = <190>;
 	};
 
 	panel: panel {
@@ -119,14 +119,14 @@
 			compatible = "rockchip,drm-logo";
 			reg = <0x0 0x0>;
 		};
-		linux,cma {
+		/*linux,cma {
 			status = "okay";
 			compatible = "shared-dma-pool";
 			inactive;
 			reusable;
 			size = <0xA00000>; //10M
 			linux,cma-default;
-		};
+		};*/
 		mmc_ecsd: mmc@3f000 {
 			reg = <0x3f000 0x00001000>;
 		};

@@ -877,6 +877,15 @@ function build_rootfs() {
 		exit 1
 	fi
 
+	# c_e add: font for QT
+	if [ "$LF_TARGET_ROOTFS" == "buildroot" ]; then
+		echo "Create fonts directory"
+		mkdir -p $rootfs_out_dir/usr/lib/fonts
+		echo $rootfs_out_dir/usr/lib/fonts
+		cd $rootfs_out_dir/usr/lib/fonts
+		ln -sf ../../share/fonts/dejavu/* .
+	fi
+
 	msg_info "If you need to add custom files, please upload them to <Luckfox Sdk>/output/out/rootfs_${RK_LIBC_TPYE}_${RK_CHIP}."
 	finish_build
 }

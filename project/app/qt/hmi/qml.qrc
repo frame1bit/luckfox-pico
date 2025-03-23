@@ -1,0 +1,46 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Style.qml</file>
+        <file>UI/Home.qml</file>
+        <file>assets/icon/outline_change_circle_white_36dp.png</file>
+        <file>assets/icon/outline_block_white_36dp.png</file>
+        <file>assets/icon/outline_swap_horizontal_circle_white_24dp.png</file>
+        <file>assets/icon/outline_vape_free_white_36dp.png</file>
+        <file>assets/icon/outline_touch_app_black_24dp.png</file>
+        <file>assets/icon/outline_lock_open_black_48dp.png</file>
+        <file>assets/icon/outline_lock_black_48dp.png</file>
+        <file>assets/icon/outline_gpp_bad_white_36dp.png</file>
+        <file>assets/icon/outline_fingerprint_black_48dp.png</file>
+        <file>assets/icon/outline_error_white_48dp.png</file>
+        <file>assets/icon/outline_done_all_white_48dp.png</file>
+        <file>assets/icon/outline_cancel_white_36dp.png</file>
+        <file>assets/icon/outline_back_hand_black_24dp.png</file>
+        <file>assets/icon/baseline_wifi_black_24dp.png</file>
+        <file>assets/icon/baseline_vaping_rooms_white_36dp.png</file>
+        <file>assets/icon/baseline_usb_off_black_24dp.png</file>
+        <file>assets/icon/baseline_usb_off_black_18dp.png</file>
+        <file>assets/icon/baseline_usb_black_24dp.png</file>
+        <file>assets/icon/baseline_usb_black_18dp.png</file>
+        <file>assets/icon/baseline_settings_ethernet_black_24dp.png</file>
+        <file>assets/icon/baseline_settings_black_24dp.png</file>
+        <file>assets/icon/baseline_power_settings_new_black_24dp.png</file>
+        <file>assets/icon/baseline_payments_white_36dp.png</file>
+        <file>assets/icon/baseline_logout_white_36dp.png</file>
+        <file>assets/icon/baseline_info_white_36dp.png</file>
+        <file>assets/icon/baseline_how_to_reg_white_36dp.png</file>
+        <file>assets/icon/baseline_fingerprint_white_48dp.png</file>
+        <file>assets/icon/baseline_fingerprint_white_36dp.png</file>
+        <file>assets/icon/baseline_credit_card_white_48dp.png</file>
+        <file>assets/icon/baseline_arrow_back_black_24dp.png</file>
+        <file>assets/icon/baseline_admin_panel_settings_white_48dp.png</file>
+        <file>assets/icon/outline_add_to_queue_white_36.png</file>
+        <file>assets/icon/outline_login_white_36dp.png</file>
+        <file>UI/Page1.qml</file>
+        <file>assets/icon/outline_grid_view_white_48.png</file>
+        <file>assets/icon/outline_grid_view_white_24.png</file>
+        <file>assets/icon/outline_grid_view_white_36.png</file>
+        <file>UI/Page2.qml</file>
+        <file>assets/icon/c.png</file>
+    </qresource>
+</RCC>
