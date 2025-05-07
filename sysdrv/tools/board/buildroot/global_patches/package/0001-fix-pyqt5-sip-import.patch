@@ -1,0 +1,93 @@
+From: Ralf Dragon @ 2023-11-23 17:40 UTC (permalink / raw)
+  To: buildroot; +Cc: Ralf Dragon, Thomas Petazzoni, Asaf Kahlon
+
+This fixes the following runtime error when importing PyQt5 in python:
+
+from PyQt5.QtCore import *
+ModuleNotFoundError: No module named 'PyQt5.sip'
+
+Signed-off-by: Ralf Dragon <hypnotoad@lindra.de>
+---
+ package/Config.in                          |  1 +
+ package/python-pyqt5/Config.in             |  1 +
+ package/python-sip-qt5/Config.in           | 10 ++++++++++
+ package/python-sip-qt5/python-sip-qt5.hash |  4 ++++
+ package/python-sip-qt5/python-sip-qt5.mk   | 15 +++++++++++++++
+ 5 files changed, 31 insertions(+)
+ create mode 100644 package/python-sip-qt5/Config.in
+ create mode 100644 package/python-sip-qt5/python-sip-qt5.hash
+ create mode 100644 package/python-sip-qt5/python-sip-qt5.mk
+
+diff --git a/package/Config.in b/package/Config.in
+index e9e8d93d6b..1549339ec3 100644
+--- a/package/Config.in
++++ b/package/Config.in
+@@ -1292,6 +1292,7 @@ menu "External python modules"
+ 	source "package/python-simplelogging/Config.in"
+ 	source "package/python-simplesqlite/Config.in"
+ 	source "package/python-sip/Config.in"
++	source "package/python-sip-qt5/Config.in"
+ 	source "package/python-six/Config.in"
+ 	source "package/python-slob/Config.in"
+ 	source "package/python-smbprotocol/Config.in"
+diff --git a/package/python-pyqt5/Config.in b/package/python-pyqt5/Config.in
+index 9fa7676f98..479403dfa0 100644
+--- a/package/python-pyqt5/Config.in
++++ b/package/python-pyqt5/Config.in
+@@ -5,6 +5,7 @@ config BR2_PACKAGE_PYTHON_PYQT5
+ 	bool "python-pyqt5"
+ 	depends on BR2_PACKAGE_QT5
+ 	select BR2_PACKAGE_PYTHON_SIP
++	select BR2_PACKAGE_PYTHON_SIP_QT5
+ 	select BR2_PACKAGE_QT5BASE_GUI
+ 	help
+ 	  Python bindings for Qt 5
+diff --git a/package/python-sip-qt5/Config.in b/package/python-sip-qt5/Config.in
+new file mode 100644
+index 0000000000..e52a46a9e5
+--- /dev/null
++++ b/package/python-sip-qt5/Config.in
+@@ -0,0 +1,10 @@
++config BR2_PACKAGE_PYTHON_SIP_QT5
++	bool "python-sip-qt5"
++	depends on BR2_PACKAGE_PYTHON_PYQT5
++	depends on BR2_PACKAGE_PYTHON_SIP
++	help
++	  SIP is a tool that makes it very easy to create Python
++	  bindings for C and C++ libraries. It was originally
++	  developed to create PyQt, the Python bindings for the Qt
++	  toolkit, but can be used to create bindings for any C or C++
++	  library.
+diff --git a/package/python-sip-qt5/python-sip-qt5.hash b/package/python-sip-qt5/python-sip-qt5.hash
+new file mode 100644
+index 0000000000..8039cdafd9
+--- /dev/null
++++ b/package/python-sip-qt5/python-sip-qt5.hash
+@@ -0,0 +1,4 @@
++# from https://pypi.org/project/PyQt5-sip/12.12.1
++
++sha256  8fdc6e0148abd12d977a1d3828e7b79aae958e83c6cb5adae614916d888a6b10  PyQt5_sip-12.12.1.tar.gz
++md5  c2117da3b4c0e081c1c5a9088b8a4d55  PyQt5_sip-12.12.1.tar.gz
+diff --git a/package/python-sip-qt5/python-sip-qt5.mk b/package/python-sip-qt5/python-sip-qt5.mk
+new file mode 100644
+index 0000000000..e71ad9bf5b
+--- /dev/null
++++ b/package/python-sip-qt5/python-sip-qt5.mk
+@@ -0,0 +1,15 @@
++################################################################################
++#
++# python-SIP-QT5
++#
++################################################################################
++
++PYTHON_SIP_QT5_VERSION = 12.12.1
++PYTHON_SIP_QT5_SITE = https://files.pythonhosted.org/packages/c1/61/4055e7a0f36339964956ff415e36f4abf82561904cc49c021da32949fc55
++PYTHON_SIP_QT5_SOURCE = PyQt5_sip-$(PYTHON_SIP_QT5_VERSION).tar.gz
++PYTHON_SIP_QT5_LICENSE = MIT
++PYTHON_SIP_QT5_LICENSE_FILES = LICENSE
++PYTHON_SIP_QT5_SETUP_TYPE = setuptools
++PYTHON_SIP_QT5_DEPENDENCIES += python-sip
++
++$(eval $(python-package))
+-- 
+2.39.2
