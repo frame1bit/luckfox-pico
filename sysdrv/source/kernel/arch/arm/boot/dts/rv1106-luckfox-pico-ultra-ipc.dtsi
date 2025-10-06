@@ -196,6 +196,12 @@
 			linux,default-trigger = "activity";
 			default-state = "on";
 		};
+
+		blink: heartbeat{
+			gpios = <&gpio3 RK_PB1 GPIO_ACTIVE_HIGH>;
+			linux,default-trigger = "heartbeat";
+			default-state = "on";
+		};
 	};
 };
 
